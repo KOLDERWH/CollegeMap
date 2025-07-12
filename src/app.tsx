@@ -106,13 +106,18 @@ export default function App() {
           });
         })
         .then(async () => {
-          map.loadImage('/icon/school_pinlet-2-medium.png', (error, image) => {
-            if (!error && !map.hasImage('school-icon')) {
-              map.addImage('school-icon', image);
-            }
-          });
           map.loadImage(
-            '/icon/school_cn_jp_pinlet-2-medium.png',
+            `${import.meta.env.BASE_URL}assets/icon/school_pinlet-2-medium.png`,
+            (error, image) => {
+              if (!error && !map.hasImage('school-icon')) {
+                map.addImage('school-icon', image);
+              }
+            }
+          );
+          map.loadImage(
+            `${
+              import.meta.env.BASE_URL
+            }assets/icon/school_cn_jp_pinlet-2-medium.png`,
             (error, image) => {
               if (!error && !map.hasImage('school-icon-double-firstClass')) {
                 map.addImage('school-icon-double-firstClass', image);
