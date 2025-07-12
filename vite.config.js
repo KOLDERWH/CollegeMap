@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/CollegeMap/examples/',
+  base: './',
   build: {
     outDir: 'examples',
   },
