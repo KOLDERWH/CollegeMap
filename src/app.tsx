@@ -23,7 +23,7 @@ export default function App() {
     map.on('load', async () => {
       const poiList: Array<any> = [];
 
-      fetch('/data/college.json')
+      fetch(`${import.meta.env.BASE_URL}assets/data/college.json`)
         .then((res) => res.json())
         .then((json: Array<any>) => {
           json.forEach((item) => {
