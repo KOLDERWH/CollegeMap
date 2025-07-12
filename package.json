@@ -1,0 +1,27 @@
+{
+  "name": "vecMap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/src/index.tsx",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react-dom": "^19.1.6",
+    "mapbox-gl": "^3.13.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/mapbox-gl": "^3.4.1",
+    "@types/react": "^19.1.8",
+    "vite": "^7.0.4"
+  }
+}
