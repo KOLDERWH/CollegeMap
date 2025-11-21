@@ -4,6 +4,8 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './app.css';
 import { defaultStyle } from '../public/style/default';
 
+import { LoadingUI } from './Loading.tsx';
+
 export default function App() {
   const isMapInit = useRef(false);
 
@@ -223,13 +225,24 @@ export default function App() {
             maxZoom: 17,
             duration: 500,
           });
+
+          isMapInit.current = true;
         })
 
         .catch((err) => console.error('Error fetching GeoJSON data:', err));
     });
-
-    isMapInit.current = true;
   }, []);
 
-  return <div id="map"></div>;
+  return (
+    <>
+      {!isMapInit.current && <LoadingUI />}
+      <div
+        id="map"
+        style={{
+          opacity: isMapInit.current ? 0 : 1,
+          transition: 'opacity 0.4s ease',
+        }}
+      />
+    </>
+  );
 }
